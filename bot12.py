@@ -4,7 +4,7 @@ import random
 import telebot
 from telebot import types
 
-TOKEN = '6019917703:AAGXtjQrP3QWvRgj0jmamaMmUZhZOs1MBA4'
+TOKEN = 'token'
 URL = "https://www.anekdot.ru/random/anekdot/"
 URLprill = 'https://www.anekdot.ru/last/good/'
 #фyнкции
@@ -36,7 +36,7 @@ def hello(message):
     item_pril = types.InlineKeyboardButton(text='Рандомная шутка(приличная)', callback_data="randpril")
 
     markup_inline.add(intem_rand, item_pril)
-    bot.send_message(message.chat.id,'Привет',reply_markup = markup_inline)
+    bot.send_message(message.chat.id,'Привет, выбирай шутку',reply_markup = markup_inline)
 
 @bot.callback_query_handler(func = lambda call: True)
 def answer(call):
